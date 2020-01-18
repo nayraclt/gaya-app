@@ -1,0 +1,32 @@
+<!-- student-list.page.html -->
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>List All Products</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <table class="table" width="100%">
+    <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of productsData">
+      <td>{{ item.id }}</td>
+      <td>{{ item.name }}</td>
+      <td style="display: flex">
+        <ion-button color="danger" size="small" (click)="delete(item)">
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <ion-button [routerLink]="['/create']">
+    Add Produto
+  </ion-button>
+</ion-content>
